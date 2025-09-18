@@ -1,0 +1,61 @@
+:root{
+    /* valores iniciales para que SIEMPRE se vea color */
+    --h: 174; /* verde menta base */
+    --s: 60;
+    --l: 62;
+    --mx: 50%;
+    --my: 50%;
+  
+    --glass-bg: rgba(255,255,255,.12);
+    --card-bg: rgba(255,255,255,.92);
+    --radius-xl: 1.25rem;
+    --accent: #0f2f2f;
+    --accent-contrast: #fff;
+  }
+  
+  /* Fondo HSL pastel con fallback sólido */
+  .bg-hsl{
+    position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(60vmax 60vmax at var(--mx) var(--my),
+        hsl(var(--h) calc(var(--s) * 1%) calc(var(--l) * 1%)) 0%,
+        hsl(calc((var(--h) + 60) % 360) calc(var(--s) * 1%) calc(max(var(--l) - 10, 10) * 1%)) 45%,
+        hsl(calc((var(--h) + 120) % 360) calc(max(var(--s) - 20, 20) * 1%) 10%) 100%),
+      linear-gradient(135deg,#0b1d1d 0%,#0a1616 100%);
+    background-color: #81d8d0;
+    filter: saturate(1.05);
+  }
+  
+  body{ min-height: 100dvh; background: transparent; }
+  .object-cover{ object-fit: cover; width: 100%; height: 100%; }
+  .glassy-nav{ background: var(--glass-bg); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(255,255,255,.2); }
+  
+  .hero-section .hero-card{ background: var(--card-bg); border-radius: var(--radius-xl); }
+  .title-main{ color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.25); letter-spacing:.5px; }
+  
+  .product-card{ background: var(--card-bg); border-radius: var(--radius-xl); transition: transform .2s, box-shadow .2s; }
+  .product-card:hover{ transform: translateY(-2px); box-shadow: 0 .75rem 2rem rgba(0,0,0,.12); }
+  .product-card .card-img-top{ border-top-left-radius: var(--radius-xl); border-top-right-radius: var(--radius-xl); }
+  
+  .benefit{ background: var(--card-bg); border-radius: var(--radius-xl); }
+  .offcanvas{ background: #fff; }
+  .cart-line{ display: grid; grid-template-columns: auto 1fr auto; gap: .75rem; align-items: center; }
+  .cart-thumb{ width: 64px; height: 64px; border-radius: .75rem; object-fit: cover; }
+  
+  #search,#sort,#filter-category,#todo-text,#todo-img,#todo-priority{ background: rgba(255,255,255,.95); }
+  
+  .btn-dark{
+    --bs-btn-bg: var(--accent);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-bg: color-mix(in oklab, var(--accent), #000 10%);
+    --bs-btn-hover-border-color: color-mix(in oklab, var(--accent), #000 10%);
+    --bs-btn-active-bg: color-mix(in oklab, var(--accent), #000 15%);
+    --bs-btn-active-border-color: color-mix(in oklab, var(--accent), #000 15%);
+    --bs-btn-color: var(--accent-contrast);
+  }
+  
+  /* To-do */
+  .todo-card{ border-radius: 1rem; background: var(--card-bg); }
+  .todo-img{ width: 100%; height: 180px; object-fit: cover; border-top-left-radius: 1rem; border-top-right-radius: 1rem; }
+  .todo-title.done{ text-decoration: line-through; opacity: .6; }
+  

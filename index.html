@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vero's Jewerly</title>
+  <meta name="description" content="Joyería elegante en verde menta Tiffany. Collares, aretes y anillos con envío a todo México.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="theme-mint">
+  <!-- Fondo pastel reactivo -->
+  <div class="bg-hsl" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark glassy-nav" aria-label="Principal">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#"><i class="bi bi-gem pe-1"></i> Vero's Jewerly</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Mostrar menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#coleccion">Colección</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tareas">Tareas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#envios">Envíos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#garantia">Garantía</a></li>
+          <li class="nav-item ms-lg-3">
+            <button class="btn btn-light rounded-pill d-flex align-items-center gap-2"
+              data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" aria-controls="cartDrawer">
+              <i class="bi bi-bag"></i><span class="d-none d-sm-inline">Carrito</span>
+              <span class="badge bg-dark-subtle text-dark-emphasis rounded-pill" id="cart-count" aria-live="polite">0</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero con título gigante -->
+  <header class="hero-section py-5">
+    <div class="container text-center">
+      <h1 class="display-3 fw-black title-main">Vero's Jewerly</h1>
+      <p class="lead text-white-75 mb-4">Elegancia diaria con un toque de menta.</p>
+      <a href="#coleccion" class="btn btn-light btn-lg rounded-pill">Ver colección <i class="bi bi-arrow-right-short"></i></a>
+    </div>
+  </header>
+
+  <!-- Controles & Colección -->
+  <main id="coleccion" class="container py-5">
+    <div class="d-flex flex-wrap align-items-end justify-content-between mb-3">
+      <div>
+        <h2 class="h3 mb-1">Colección destacada</h2>
+        <p class="text-secondary mb-0">Listas para envío.</p>
+      </div>
+      <div class="d-flex gap-2">
+        <input id="search" class="form-control rounded-pill" type="search" placeholder="Buscar..." aria-label="Buscar">
+        <select id="sort" class="form-select rounded-pill" aria-label="Ordenar">
+          <option value="featured" selected>Destacados</option>
+          <option value="price-asc">Precio: menor a mayor</option>
+          <option value="price-desc">Precio: mayor a menor</option>
+        </select>
+        <select id="filter-category" class="form-select rounded-pill">
+          <option value="all" selected>Categorías: Todas</option>
+          <option value="Aretes">Aretes</option>
+          <option value="Anillos">Anillos</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="product-grid" class="row g-4">
+      <!-- Aretes de perla pequeños -->
+      <div class="col-sm-6 col-md-4">
+        <article class="card product-card h-100 border-0 shadow-sm"
+          data-id="perla-mini" data-name="Aretes Perla Mini" data-price="599" data-category="Aretes"
+          data-img="./assets/aretes_perla_mini.jpg">
+          <div class="ratio ratio-4x3">
+            <img src="./assets/aretes_perla_mini.jpg" class="card-img-top object-cover" alt="Aretes de perla pequeños">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="h6 card-title mb-1">Aretes Perla Mini</h3>
+            <p class="text-secondary small mb-2">Perla cultivada • Plata .925</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <strong class="price" data-raw="599">$599</strong>
+              <span class="badge bg-success-subtle text-success-emphasis">Nuevo</span>
+            </div>
+            <div class="mt-3 d-grid gap-2">
+              <button class="btn btn-dark add-to-cart" type="button"><i class="bi bi-bag-plus"></i> Agregar</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Aretes halo de cristal -->
+      <div class="col-sm-6 col-md-4">
+        <article class="card product-card h-100 border-0 shadow-sm"
+          data-id="halo-cristal" data-name="Aretes Halo Cristal" data-price="749" data-category="Aretes"
+          data-img="./assets/aretes_halo_cristal.jpg">
+          <div class="ratio ratio-4x3">
+            <img src="./assets/aretes_halo_cristal.jpg" class="card-img-top object-cover" alt="Aretes halo de cristal">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="h6 card-title mb-1">Aretes Halo Cristal</h3>
+            <p class="text-secondary small mb-2">Baño de oro • Hipoalergénicos</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <strong class="price" data-raw="749">$749</strong>
+              <span class="badge bg-primary-subtle text-primary-emphasis">Top ventas</span>
+            </div>
+            <div class="mt-3 d-grid gap-2">
+              <button class="btn btn-dark add-to-cart" type="button"><i class="bi bi-bag-plus"></i> Agregar</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Anillo de diamantes -->
+      <div class="col-sm-6 col-md-4">
+        <article class="card product-card h-100 border-0 shadow-sm"
+          data-id="solitario-luz" data-name="Anillo Solitario Luz" data-price="999" data-category="Anillos"
+          data-img="./assets/anillo_solitario_luz.jpeg">
+          <div class="ratio ratio-4x3">
+            <img src="./assets/anillo_solitario_luz.jpeg" class="card-img-top object-cover" alt="Anillo de diamantes solitario">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h3 class="h6 card-title mb-1">Anillo Solitario Luz</h3>
+            <p class="text-secondary small mb-2">Corte brillante • Plata .925</p>
+            <div class="d-flex align-items-center justify-content-between">
+              <strong class="price" data-raw="999">$999</strong>
+              <span class="badge bg-warning-subtle text-warning-emphasis">Edición limitada</span>
+            </div>
+            <div class="mt-3 d-grid gap-2">
+              <button class="btn btn-dark add-to-cart" type="button"><i class="bi bi-bag-plus"></i> Agregar</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- Tareas -->
+  <section id="tareas" class="container py-5">
+    <div class="d-flex align-items-end justify-content-between mb-3">
+      <div>
+        <h2 class="h3 mb-1">Tareas de la tienda</h2>
+        <p class="text-secondary mb-0">Agrega tareas, márcalas y adjunta imagen por URL.</p>
+      </div>
+      <span class="badge text-bg-success" id="todo-counter">0/0 completadas</span>
+    </div>
+
+    <form id="todo-form" class="row g-2">
+      <div class="col-md-4"><input id="todo-text" class="form-control rounded-pill" placeholder="Ej. Publicar promo en IG" required></div>
+      <div class="col-md-4"><input id="todo-img" class="form-control rounded-pill" placeholder="URL de imagen (opcional)"></div>
+      <div class="col-md-2">
+        <select id="todo-priority" class="form-select rounded-pill">
+          <option value="normal" selected>Normal</option>
+          <option value="alta">Alta</option>
+          <option value="baja">Baja</option>
+        </select>
+      </div>
+      <div class="col-md-2 d-grid"><button class="btn btn-dark rounded-pill" type="submit"><i class="bi bi-plus-lg"></i> Agregar</button></div>
+    </form>
+
+    <div id="todo-list" class="row g-3 mt-2"></div>
+  </section>
+
+  <!-- Info -->
+  <section id="envios" class="container pb-4">
+    <div class="row g-4">
+      <div class="col-md-4"><div class="benefit card h-100 border-0 shadow-sm"><div class="card-body"><i class="bi bi-truck fs-4"></i><h4 class="h6 mt-2 mb-1">Envío rápido y gratis</h4><p class="text-secondary small mb-0">24–72h en MX desde $799.</p></div></div></div>
+      <div id="garantia" class="col-md-4"><div class="benefit card h-100 border-0 shadow-sm"><div class="card-body"><i class="bi bi-shield-check fs-4"></i><h4 class="h6 mt-2 mb-1">Garantía 1 año</h4><p class="text-secondary small mb-0">Defectos de fabricación cubiertos.</p></div></div></div>
+      <div class="col-md-4"><div class="benefit card h-100 border-0 shadow-sm"><div class="card-body"><i class="bi bi-arrow-repeat fs-4"></i><h4 class="h6 mt-2 mb-1">Devoluciones 30 días</h4><p class="text-secondary small mb-0">Sin complicaciones.</p></div></div></div>
+    </div>
+  </section>
+
+  <!-- Footer + Carrito -->
+  <footer class="py-4 mt-5 border-top border-white-25">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <p class="mb-0 small text-white-50">© <span id="year"></span> Vero's Jewerly. Todos los derechos reservados.</p>
+      <ul class="nav small">
+        <li class="nav-item"><a class="nav-link text-white-50" href="#">Privacidad</a></li>
+        <li class="nav-item"><a class="nav-link text-white-50" href="#">Términos</a></li>
+        <li class="nav-item"><a class="nav-link text-white-50" href="#">Soporte</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartDrawer" aria-labelledby="cartLabel">
+    <div class="offcanvas-header">
+      <h5 id="cartLabel" class="offcanvas-title"><i class="bi bi-bag pe-1"></i> Carrito</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="cart-items" class="vstack gap-3" aria-live="polite" aria-atomic="true"></div>
+      <div class="mt-auto pt-3 border-top">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="fw-semibold">Subtotal</span>
+          <span id="cart-subtotal" class="fw-bold">$0</span>
+        </div>
+        <p class="text-secondary small mb-3">Impuestos/Envío al finalizar.</p>
+        <div class="d-grid gap-2">
+          <button id="checkout" class="btn btn-dark rounded-pill" type="button">Finalizar compra</button>
+          <button id="clear-cart" class="btn btn-outline-secondary btn-sm rounded-pill" type="button">Vaciar carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="./script.js" defer></script>
+</body>
+</html>
